@@ -15,7 +15,7 @@ An interactive algorithm visualizer built with HTML, CSS, and Javascript.
 3. Red = being compared, Yellow = current minimum, White = stored
 
 ##Live demo
-[Link coming soon]
+https://lalithdevgariga-glitch.github.io/Algolens
 
 ##Built By
 Lalith Gariga - Aga khan academy Hyderabad 
