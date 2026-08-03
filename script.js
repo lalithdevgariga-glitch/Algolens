@@ -47,3 +47,37 @@ async function bubbleSort() {
 }
 
 document.getElementById("bubbleBtn").addEventListener("click", bubbleSort);
+
+async function selectionSort() {
+  const bars = document.querySelectorAll(".bar");
+  
+  for (let i = 0; i < array.length; i++) {
+    let minIdx = i;
+    bars[i].style.backgroundColor = "#ffd93d";
+    
+    for (let j = i + 1; j < array.length; j++) {
+      bars[j].style.backgroundColor = "#ff6b6b";
+      await new Promise(resolve => setTimeout(resolve, 100));
+      
+      if (array[j] < array[minIdx]) {
+        if (minIdx !== i) {
+          bars[minIdx].style.backgroundColor = "#00ffcc";
+        }
+        minIdx = j;
+      } else {
+        bars[j].style.backgroundColor = "#00ffcc";
+      }
+    }
+    
+    let temp = array[i];
+    array[i] = array[minIdx];
+    array[minIdx] = temp;
+    
+    bars[i].style.height = array[i] + "px";
+    bars[minIdx].style.height = array[minIdx] + "px";
+    bars[minIdx].style.backgroundColor = "#00ffcc";
+    bars[i].style.backgroundColor = "#ffffff";
+  }
+}
+
+document.getElementById("selectionBtn").addEventListener("click", selectionSort);
